@@ -1,0 +1,5 @@
+{
+  "name": "SiteHeader",
+  "version": "1.0.0",
+  "main": "./SiteHeader.tsx"
+}

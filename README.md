@@ -1,44 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Этот проект - тестовое задание от магазина "Лента"
 
-## Available Scripts
+## Шаги запуска проекта ## 
+npm i; // установка зависимостей
 
-In the project directory, you can run:
+npm start; // проект запустится в браузере
 
-### `npm start`
+npm test; // запуск тестов
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Общая информация ##
+При любых изменениях в сторе, они (изменения) сохраняется в LocalStorage;
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Если изменений нет, то генерируется 100 товаров - для проверки пагинации.
 
-### `npm test`
+Переход по страницам сохраняется в query в url страницы, при перезугрке страницы Вы окажитесь на странице которая указана в URL.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Если query не валидный, то показывается первая страница.
 
-### `npm run build`
+Если в query указана старница превышающая допустимые страницы, то будет отображена ошибка.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Доделки ##
+Можно было бы углубится в более глубокую валидацию полей ввода.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+На данный момент валидация представлена базовыми браузерскими возможностями html5
 
-### `npm run eject`
+## Тесты ##
+Тесты написаны на компоненту Button и на редьюсер.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Не стал делать тестирование actions, т.к. нужно мокать localStorage;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Поддержать localStorage для jest не проблема, есть готовые npm модули, но мне показалось это излишним в рамках тестового задания.

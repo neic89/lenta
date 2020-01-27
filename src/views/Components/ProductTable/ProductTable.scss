@@ -1,0 +1,45 @@
+.product-table {
+    border-collapse: collapse;
+
+    th {
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    td {
+        border-top: 1px solid #cdcdcd;
+        padding: 5px 0;
+        transition: background-color 0.2s;
+    }
+
+    tr {
+        cursor: pointer;
+
+        &:hover {
+            td {
+                background-color: #cdcdcd;
+            }
+        }
+
+        &:last-of-type {
+            td {
+                border-bottom: 1px solid #cdcdcd;
+            }
+        }
+    }
+
+    &__img {
+        min-width: 150px;
+        text-align: left;
+    }
+
+    &__code {
+        min-width: 150px;
+    }
+
+    &__short-name {
+        width: 100%;
+    }
+}

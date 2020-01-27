@@ -1,0 +1,14 @@
+.overview-page {
+    &__content {
+        margin: 30px 0;
+        height: 358px;
+    }
+
+    &__empty {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

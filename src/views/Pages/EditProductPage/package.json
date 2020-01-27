@@ -1,0 +1,5 @@
+{
+  "name": "EditProductPage",
+  "version": "1.0.0",
+  "main": "./EditProductPage.tsx"
+}
