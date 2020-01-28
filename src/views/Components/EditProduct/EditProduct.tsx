@@ -59,32 +59,33 @@ const EditProductPage: React.FC<IEditProductPageProps> = ({saveProductHandler, e
         <div className="edit-product-component">
             {error != null && <div className="error">{error}</div>}
             <form className="edit-product-component__form" onSubmit={onSendForm} ref={formRef}>
-                <div className="edit-product-component__row">
-                    <label className="edit-product-component__label">Код товара:</label>
-                    <input className="edit-product-component__input" required={true} placeholder="Введите код в формате P-0000000" type="text" value={code} onChange={onCodeChange}/>
-                </div>
-                <div className="edit-product-component__row">
-                    <label className="edit-product-component__label">Краткое название:</label>
-                    <input className="edit-product-component__input" required={true} placeholder="Введите краткое название товара от 2 до 60 символов" minLength={2} maxLength={60} type="text" value={shortName} onChange={onShortNameChange}/>
-                </div>
+                <label className="edit-product-component__row">
+                    <span className="edit-product-component__label">Код товара:</span>
+                    <input className="edit-product-component__input" tabIndex={1} required={true} placeholder="Введите код в формате P-0000000" type="text" value={code} onChange={onCodeChange}/>
+                </label>
+                <label className="edit-product-component__row">
+                    <span className="edit-product-component__label">Краткое название:</span>
+                    <input className="edit-product-component__input" tabIndex={2} required={true} placeholder="Введите краткое название товара от 2 до 60 символов" minLength={2} maxLength={60} type="text" value={shortName} onChange={onShortNameChange}/>
+                </label>
 
-                <div className="edit-product-component__row">
-                    <label className="edit-product-component__label">Полное название:</label>
-                    <input className="edit-product-component__input" required={true} placeholder="Введите полное название товара от 2 до 100 символов" type="text" minLength={2} maxLength={100} value={fullName} onChange={onFullNameChange}/>
-                </div>
-                <div className="edit-product-component__row">
-                    <label className="edit-product-component__label">Наличие товара:</label>
-                    <input className="edit-product-component__input" required={true} type="number" min={0} placeholder="Введите число остатка" value={availabilityValue} onChange={onAvailabilityValueChange}/>
-                    <select className="edit-product-component__input" required={true} value={availabilityUnit} onChange={onAvailabilityUnitChange}>
+                <label className="edit-product-component__row">
+                    <span className="edit-product-component__label">Полное название:</span>
+                    <input className="edit-product-component__input" tabIndex={3} required={true} placeholder="Введите полное название товара от 2 до 100 символов" type="text" minLength={2} maxLength={100} value={fullName} onChange={onFullNameChange}/>
+                </label>
+                <label className="edit-product-component__row">
+                    <span className="edit-product-component__label">Наличие товара:</span>
+                    <input className="edit-product-component__input" tabIndex={4} required={true} type="number" min={0} placeholder="Введите число остатка" value={availabilityValue} onChange={onAvailabilityValueChange}/>
+                    <select className="edit-product-component__input" tabIndex={5} required={true} value={availabilityUnit} onChange={onAvailabilityUnitChange}>
                         {UNITS.map((unit) => <option key={unit} value={unit}>{unit}</option>)}
                     </select>
-                </div>
-                <div className="edit-product-component__row">
-                    <label className="edit-product-component__label">Изображение:</label>
-                    <input className="edit-product-component__input" required={true} placeholder="https://lenta.gcdn.co/globalassets/1/-/35/28/72/238094.png" type="text" value={imageUrl} onChange={onImageUrlChange}/>
-                </div>
+                </label>
+                <label className="edit-product-component__row">
+                    <span className="edit-product-component__label">Изображение:</span>
+                    <input className="edit-product-component__input" tabIndex={6} required={true} placeholder="Введите ссылку на изображение товара" type="text" value={imageUrl} onChange={onImageUrlChange}/>
+                    <span className="edit-product-component__note">пример: https://lenta.gcdn.co/globalassets/1/-/35/28/72/238094.png</span>
+                </label>
                 <div>
-                    <Button text="Сохранить" clickHandler={onSendForm}/>
+                    <Button text="Сохранить" clickHandler={onSendForm} />
                     <Link to="/" className="btn btn_error">Отмена</Link>
                 </div>
             </form>
