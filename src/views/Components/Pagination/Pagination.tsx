@@ -38,12 +38,14 @@ const Pagination: React.FC<IPaginationProps> = ({page, maxPages, changePageHandl
         return pageItems;
     };
 
-    const onForwardToPage = () => {
+    const onForwardToPage = (e: any) => {
+        e.preventDefault();
         let parsePageInput = parseInt(pageInput);
         if (Number.isNaN(parsePageInput) || parsePageInput === 0) {
            parsePageInput = 1;
         }
-        changePageHandler(parsePageInput)
+        changePageHandler(parsePageInput);
+        return false;
     };
 
     const getListOffsetLeft = (): number => page <= START_OFFSET_PAGE ? 0 : (page - START_OFFSET_PAGE) * 30;
@@ -59,11 +61,11 @@ const Pagination: React.FC<IPaginationProps> = ({page, maxPages, changePageHandl
                 </div>
                 <Button text="Следующая страница >" extraClassNames="pagination__button pagination__button_next" isDisabled={page === maxPages} clickHandler={onNextPageButton}/>
             </div>
-            <div className="pagination__right">
+            <form className="pagination__forward-to-page-form" onSubmit={onForwardToPage}>
                 <input className="pagination__input" value={pageInput} type="number" onChange={onPageInputChange} min={1} max={maxPages}/>
                 <span>из {maxPages}</span>
                 <button onClick={onForwardToPage}>Перейти</button>
-            </div>
+            </form>
         </div>
     );
 };
