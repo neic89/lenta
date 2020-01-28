@@ -18,7 +18,7 @@ const EditProductPage: React.FC<IEditProductPageProps> = ({saveProductHandler, e
     const [code, setCode] = useState(product == null ? '' : product.code);
     const [shortName, setShortName] = useState(product == null ? '' : product.shortName);
     const [fullName, setFullName] = useState(product == null ? '' : product.fullName);
-    const [availabilityValue, setAvailabilityValue] = useState(product == null ? '0' : product.availability.value);
+    const [availabilityValue, setAvailabilityValue] = useState(product == null ? '' : product.availability.value);
     const [availabilityUnit, setAvailabilityUnit] = useState(product == null ? UNITS[0] : product.availability.unit);
     const [imageUrl, setImageUrl] = useState(product == null ? '' : product.image_url);
 
