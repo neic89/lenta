@@ -2,7 +2,7 @@ import {IProduct} from "../../types/Product";
 
 export const productsArray: Array<IProduct> = [];
 
-for (let i=0;i<100;i++) {
+for (let i = 0; i < 100; i++) {
     productsArray.push({
         fullName: 'Биойогурт СЛОБОДА с клубникой 2% без змж (Россия) 290г',
         shortName: 'Биойогурт СЛОБОДА 290г',
