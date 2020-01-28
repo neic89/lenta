@@ -84,7 +84,7 @@ const EditProductPage: React.FC<IEditProductPageProps> = ({saveProductHandler, e
                     <input className="edit-product-component__input" tabIndex={6} required={true} placeholder="Введите ссылку на изображение товара" type="text" value={imageUrl} onChange={onImageUrlChange}/>
                     <span className="edit-product-component__note">пример: https://lenta.gcdn.co/globalassets/1/-/35/28/72/238094.png</span>
                 </label>
-                <div>
+                <div className="edit-product-component__buttons">
                     <Button text="Сохранить" clickHandler={onSendForm} />
                     <Link to="/" className="btn btn_error">Отмена</Link>
                 </div>
